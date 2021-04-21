@@ -1,0 +1,51 @@
+﻿<h3>Main Page</h3>
+
+<style>
+    button {
+        height: 40px;
+        width: 100%;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+        .flex div {
+            padding-bottom: 10px;
+            padding-top: 10px;
+            padding-right: 10px;
+        }
+</style>
+
+<div class="flex">
+    <div>
+        <button id="all" class="btn btn-outline-dark">All</button>
+    </div>
+    <div>
+        <button id="srcbymod" class="btn btn-outline-dark">Search By Model</button>
+    </div>
+    <div>
+        <button id="add" class="btn btn-outline-dark">Add</button>
+    </div>
+    <div>
+        <button id="srcbypr" class="btn btn-outline-dark">Search By Price</button>
+    </div>
+</div>
+
+<script defer type="text/javascript">
+    all.onclick = function () {
+        window.open('https://localhost:44316/Home/All', '_self');
+    }
+
+    srcbymod.onclick = function () {
+        window.open('https://localhost:44316/Home/SearchByModel', '_self');
+    }
+
+    add.onclick = function () {
+        window.open('https://localhost:44316/Home/Add', '_self');
+    }
+
+    srcbypr.onclick = function () {
+        window.open('https://localhost:44316/Home/SearchByPrice', '_self');
+    }
+</script>

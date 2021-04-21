@@ -1,0 +1,53 @@
+﻿@model Car
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    li {
+        list-style-type: none;
+        padding: 10px;
+    }
+
+    .flex {
+        display: flex;
+    }
+</style>
+
+<form asp-action="SearchByModel" asp-controller="Home">
+    <div class="flex">
+        <div>
+            <ul>
+                <li>
+                    <label asp-for="Model">Enter Model:</label>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <input asp-for="Model" type="text" autocomplete="off" />
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <input id="submbtn" type="submit" value="Search" class="btn btn-outline-dark" />
+    </div>
+</form>
+
+<div>
+    <pre>
+
+
+    </pre>
+    @if (!(Model is null))
+    {
+        <div>
+            Price for @Model.Model is @Model.Price.
+        </div>
+    }
+
+</div>

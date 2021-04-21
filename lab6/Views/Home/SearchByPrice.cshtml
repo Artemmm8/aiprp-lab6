@@ -1,0 +1,60 @@
+﻿@model CarManager
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    li {
+        list-style-type: none;
+        padding: 10px;
+    }
+
+    .flex {
+        display: flex;
+    }
+</style>
+
+<form asp-action="SearchByPrice" asp-controller="Home">
+    <div class="flex">
+        <div>
+            <ul>
+                <li>
+                    <label asp-for="Price">Enter Price:</label>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <input asp-for="Price" autocomplete="off" />
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <input id="submbtn" type="submit" value="Search" class="btn btn-outline-dark" />
+    </div>
+</form>
+
+<div>
+    <pre>
+
+
+    </pre>
+    @if (!(Model is null))
+    {
+        <div>
+            Cars having price less than you entered:
+        </div>
+        foreach (var m in Model.Cars)
+        {
+            <div>
+                @m.Model: @m.Price
+            </div>
+        }
+    }
+
+</div>
